@@ -195,7 +195,7 @@ function AllUsers() {
     );
   }
   return (
-    <section style={{ marginLeft: "20vw" }}>
+    <section style={{ paddingLeft: "20vw" }}>
       {console.log(DUMMY_DATA)}
       <UserItem items={DUMMY_DATA} />
     </section>
