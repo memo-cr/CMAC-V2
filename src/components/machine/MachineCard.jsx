@@ -10,7 +10,7 @@ function MachineCard(props) {
         <div className="card-header">
           <CloseButton
             variant="white"
-            onClick={MachineDelete}
+            onClick={MachineDelete(props.del)}
             style={{ float: "right" }}
           />
           <h5 className="card-title">{props.name}</h5>

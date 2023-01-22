@@ -8,28 +8,17 @@ import Card from "react-bootstrap/Card";
 
 function NewUserForm(props) {
   const nameInputRef = useRef();
-  const surnameInputRef = useRef();
-  const mailInputRef = useRef();
-  const nfcInputRef = useRef();
   // const allowInputRef= useRef();
 
   function submitHandler(event) {
     event.preventDefault();
 
     const enteredName = nameInputRef.current.value;
-    const enteredSurname = surnameInputRef.current.value;
-    const enteredMail = mailInputRef.current.value;
-    const enteredNFC = nfcInputRef.current.value;
-
-    const userData = {
+    const machineData = {
       name: enteredName,
-      surname: enteredSurname,
-      email: enteredMail,
-      nfc: enteredNFC,
-      allow: [0, 1, 2],
     };
 
-    props.onAddUser(userData);
+    props.onAddMachine(machineData);
   }
 
   return (
@@ -59,7 +48,11 @@ function NewUserForm(props) {
           >
             <Form.Group as={Col} controlId="formGridName">
               <Form.Label>Machine Name</Form.Label>
-              <Form.Control type="text" placeholder="z.B.: 3D Printer" />
+              <Form.Control
+                type="text"
+                ref={nameInputRef}
+                placeholder="z.B.: 3D Printer"
+              />
             </Form.Group>
           </Row>
 

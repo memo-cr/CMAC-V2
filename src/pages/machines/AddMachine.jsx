@@ -8,23 +8,27 @@ function AddMachine() {
   const history = useHistory();
 
   function addMachineHandler(machine) {
-    fetch(
-      "https://react-getting-started-bf81d-default-rtdb.firebaseio.com/meetups.json",
-      {
-        method: "POST",
-        body: JSON.stringify(machine),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    ).then(() => {
-      history.replace("/");
-    });
+    fetch("https://testapi.robli.at/machine/add", {
+      method: "POST",
+      body: JSON.stringify(machine),
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+        Authorization: localStorage.getItem("token"),
+      },
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        alert("added " + machine.name);
+        history.replace("/");
+      });
   }
 
   return (
     <section>
-      <NewMachineForm onAddUser={addMachineHandler} />
+      <NewMachineForm onAddMachine={addMachineHandler} />
     </section>
   );
 }
