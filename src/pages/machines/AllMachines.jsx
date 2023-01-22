@@ -37,7 +37,7 @@ function AllMachines() {
     );
   }
   return (
-    <section>
+    <section style={{ paddingLeft: "20vw" }}>
       <h1>All Machines</h1>
       <MachineItem items={loadedMachines} />
     </section>

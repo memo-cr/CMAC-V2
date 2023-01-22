@@ -10,6 +10,8 @@ import {
   CDBSidebarFooter,
 } from "cdbreact";
 
+import switcher from "../Switcher";
+
 function Sidebar(props) {
   return (
     <div>
@@ -44,7 +46,9 @@ function Sidebar(props) {
         </CDBSidebarContent>
 
         <CDBSidebarFooter style={{ textAlign: "center" }}>
-          <CDBSidebarMenuItem icon="moon">Switch mode</CDBSidebarMenuItem>
+          <CDBSidebarMenuItem icon="moon" onClick={switcher()}>
+            Switch mode
+          </CDBSidebarMenuItem>
         </CDBSidebarFooter>
       </CDBSidebar>
       {props.children}
