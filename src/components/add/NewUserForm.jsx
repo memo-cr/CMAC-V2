@@ -3,11 +3,9 @@ import { useRef } from "react";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
-import CardHeader from "react-bootstrap/esm/CardHeader";
 
 function NewUserForm(props) {
   const nameInputRef = useRef();
@@ -59,12 +57,16 @@ function NewUserForm(props) {
           >
             <Form.Group as={Col} controlId="formGridName">
               <Form.Label>Name</Form.Label>
-              <Form.Control type="text" placeholder="Max" />
+              <Form.Control type="text" ref={nameInputRef} placeholder="Max" />
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridSurname">
               <Form.Label>Surname</Form.Label>
-              <Form.Control type="text" placeholder="Mustermann" />
+              <Form.Control
+                type="text"
+                ref={surnameInputRef}
+                placeholder="Mustermann"
+              />
             </Form.Group>
           </Row>
 
@@ -74,7 +76,11 @@ function NewUserForm(props) {
             controlId="formGridEmail"
           >
             <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="z.B.: m.m@temp.at" />
+            <Form.Control
+              type="email"
+              ref={mailInputRef}
+              placeholder="z.B.: m.m@temp.at"
+            />
           </Form.Group>
 
           <Form.Group
@@ -83,12 +89,16 @@ function NewUserForm(props) {
             controlId="formGridAddress2"
           >
             <Form.Label>NFC ID</Form.Label>
-            <Form.Control type="text" placeholder="z.B.: 1XXX" />
+            <Form.Control
+              type="text"
+              ref={nfcInputRef}
+              placeholder="z.B.: 1XXX"
+            />
           </Form.Group>
           <Accordion
             style={{ marginLeft: "10px", marginRight: "10px" }}
             as={Col}
-            defaultActiveKey="0"
+            defaultActiveKey="1"
           >
             <Accordion.Item eventKey="0">
               <Accordion.Header>machines</Accordion.Header>

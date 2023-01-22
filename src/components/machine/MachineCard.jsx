@@ -12,7 +12,7 @@ function MachineCard(props) {
         </div>
 
         <div className="card-body" style={{}}>
-          <p className="card-text">ID: {props.iduser}</p>
+          <p className="card-text">ID: {props.idusr}</p>
         </div>
 
         <div className="card-footer bg-secondary">

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import Spinner from "react-bootstrap/Spinner";
 import MachineItem from "../../components/machine/MachineItem";
 
 function AllMachines() {
@@ -8,9 +8,9 @@ function AllMachines() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(
-      "https://react-getting-started-bf81d-default-rtdb.firebaseio.com/meetups.json"
-    )
+    fetch("https://testapi.robli.at/machine/all", {
+      headers: { Authorization: localStorage.getItem("token") },
+    })
       .then((response) => {
         return response.json();
       })
@@ -32,7 +32,14 @@ function AllMachines() {
   if (isLoading) {
     return (
       <section>
-        <p>Loading...</p>
+        <Spinner
+          animation="border"
+          style={{
+            flex: 1,
+            marginTop: "350px",
+            marginLeft: "50%",
+          }}
+        />
       </section>
     );
   }
