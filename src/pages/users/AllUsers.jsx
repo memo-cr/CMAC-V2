@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Spinner from "react-bootstrap/Spinner";
 
+import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
 import UserItem from "../../components/user/UserItem";
 
 function AllUsers() {
+  CheckIfLoggedIn();
   const [isLoading, setIsLoading] = useState(true);
   const [loadedUsers, setLoadedUsers] = useState([]);
 

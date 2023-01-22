@@ -3,11 +3,8 @@ import { useRef } from "react";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
-import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
-import CardHeader from "react-bootstrap/esm/CardHeader";
 
 function NewUserForm(props) {
   const nameInputRef = useRef();

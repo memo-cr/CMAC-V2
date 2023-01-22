@@ -29,9 +29,9 @@ function Login() {
   }
 
   return (
-    <sectio>
+    <section>
       <LoginForm onLogin={loginHandler} />
-    </sectio>
+    </section>
   );
 }
 

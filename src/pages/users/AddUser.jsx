@@ -1,8 +1,10 @@
 import { useHistory } from "react-router-dom";
 
+import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
 import NewUserForm from "../../components/add/NewUserForm";
 
 function AddUser() {
+  CheckIfLoggedIn();
   const history = useHistory();
 
   function addUserHandler(user) {

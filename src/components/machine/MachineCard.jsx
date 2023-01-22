@@ -1,13 +1,18 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import CloseButton from "react-bootstrap/CloseButton";
 import Button from "react-bootstrap/Button";
+import MachineDelete from "./MachineDelete";
 
 function MachineCard(props) {
   return (
     <div className="p-2 g-3">
       <li className="card shadow-border text-bg-dark border-dark">
         <div className="card-header">
-          <CloseButton variant="white" style={{ float: "right" }} />
+          <CloseButton
+            variant="white"
+            onClick={MachineDelete}
+            style={{ float: "right" }}
+          />
           <h5 className="card-title">{props.name}</h5>
         </div>
 
@@ -16,7 +21,9 @@ function MachineCard(props) {
         </div>
 
         <div className="card-footer bg-secondary">
-          <Button variant="primary">Edit</Button>
+          <Button variant="primary" style={{ width: "150px" }}>
+            Edit
+          </Button>
         </div>
       </li>
     </div>

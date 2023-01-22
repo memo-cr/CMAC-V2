@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
+
+import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
 import Spinner from "react-bootstrap/Spinner";
 import MachineItem from "../../components/machine/MachineItem";
 
 function AllMachines() {
+  CheckIfLoggedIn();
   const [isLoading, setIsLoading] = useState(true);
   const [loadedMachines, setLoadedMachines] = useState([]);
 
@@ -19,6 +22,7 @@ function AllMachines() {
         for (const key in data) {
           const user = {
             id: key,
+            del: data[key]._id,
             ...data[key],
           };
 
@@ -44,8 +48,7 @@ function AllMachines() {
     );
   }
   return (
-    <section style={{ paddingLeft: "20vw" }}>
-      <h1>All Machines</h1>
+    <section style={{ paddingLeft: "18vw" }}>
       <MachineItem items={loadedMachines} />
     </section>
   );
