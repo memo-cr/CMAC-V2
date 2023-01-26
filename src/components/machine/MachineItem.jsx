@@ -5,9 +5,7 @@ import MachineCard from "./MachineCard";
 function MachineItem(props) {
   return (
     <div>
-      {" "}
       <ul className="d-flex flex-wrap align-items-center">
-        {console.log(props.items)}
         {props.items.map((item) => (
           <MachineCard
             key={item.id}
