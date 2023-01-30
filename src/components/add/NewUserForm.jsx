@@ -112,12 +112,23 @@ function NewUserForm(props) {
               <Accordion.Header>machines</Accordion.Header>
               <Accordion.Body>
                 <Form.Check
-                  type="switch"
+                  inline
+                  type="checkbox"
                   id="custom-switch0"
                   label="3D Drucker"
                 />
-                <Form.Check type="switch" id="custom-switch1" label="Hello" />
-                <Form.Check type="switch" id="custom-switch2" label="CNC" />
+                <Form.Check
+                  inline
+                  type="checkbox"
+                  id="custom-switch1"
+                  label="Hello"
+                />
+                <Form.Check
+                  inline
+                  type="checkbox"
+                  id="custom-switch2"
+                  label="CNC"
+                />
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>

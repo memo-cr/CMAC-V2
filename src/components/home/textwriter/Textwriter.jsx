@@ -1,8 +1,14 @@
-import Typewriter from "typewriter-effect/dist/core";
+import { Typewriter } from "react-simple-typewriter";
 
-function Typewriter() {
-  new Typewriter("#typewriter", {
-    strings: ["Hello", "World"],
-    autoStart: true,
-  });
+function Textwriter() {
+  return (
+    <h1>
+      welcome to
+      <a style={{ color: "#008d8c" }}>
+        <Typewriter words={[" CMAC"]} loop cursor cursorBlinking />
+      </a>
+    </h1>
+  );
 }
+
+export default Textwriter;
