@@ -6,11 +6,11 @@ import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 
-function NewMachineForm(props) {
+function EditMachineForm(props) {
   const nameInputRef = useRef();
   // const allowInputRef= useRef();
 
-  function submitHandler(event) {
+  function editHandler(event) {
     event.preventDefault();
 
     const enteredName = nameInputRef.current.value;
@@ -18,7 +18,7 @@ function NewMachineForm(props) {
       name: enteredName,
     };
 
-    props.onAddMachine(machineData);
+    props.onEditMachine(machineData);
   }
 
   return (
@@ -30,7 +30,7 @@ function NewMachineForm(props) {
       }}
     >
       <Card className="row-5 align-items-center col-5 mx-auto ">
-        <Form onSubmit={submitHandler}>
+        <Form onSubmit={editHandler}>
           <Row>
             <h2
               style={{
@@ -39,7 +39,7 @@ function NewMachineForm(props) {
                 marginRight: "10px",
               }}
             >
-              Add a new machine
+              Edit {props.machineName}
             </h2>
           </Row>
           <Row
@@ -51,7 +51,7 @@ function NewMachineForm(props) {
               <Form.Control
                 type="text"
                 ref={nameInputRef}
-                placeholder="z.B.: 3D Printer"
+                placeholder={props.machineName}
               />
             </Form.Group>
           </Row>
@@ -67,4 +67,4 @@ function NewMachineForm(props) {
   );
 }
 
-export default NewMachineForm;
+export default EditMachineForm;

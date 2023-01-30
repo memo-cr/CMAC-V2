@@ -26,7 +26,7 @@ function NewUserForm(props) {
       name: enteredName,
       surname: enteredSurname,
       email: enteredMail,
-      nfc: enteredNFC,
+      nfcid: enteredNFC,
       allow: [0, 1, 2],
     };
 
@@ -48,7 +48,7 @@ function NewUserForm(props) {
                 marginRight: "10px",
               }}
             >
-              Add a new user
+              Add user
             </h2>
           </Row>
           <Row
@@ -57,12 +57,18 @@ function NewUserForm(props) {
           >
             <Form.Group as={Col} controlId="formGridName">
               <Form.Label>Name</Form.Label>
-              <Form.Control type="text" ref={nameInputRef} placeholder="Max" />
+              <Form.Control
+                required
+                type="text"
+                ref={nameInputRef}
+                placeholder="Max"
+              />
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridSurname">
               <Form.Label>Surname</Form.Label>
               <Form.Control
+                required
                 type="text"
                 ref={surnameInputRef}
                 placeholder="Mustermann"
@@ -77,6 +83,7 @@ function NewUserForm(props) {
           >
             <Form.Label>Email</Form.Label>
             <Form.Control
+              required
               type="email"
               ref={mailInputRef}
               placeholder="z.B.: m.m@temp.at"
@@ -90,6 +97,7 @@ function NewUserForm(props) {
           >
             <Form.Label>NFC ID</Form.Label>
             <Form.Control
+              required
               type="text"
               ref={nfcInputRef}
               placeholder="z.B.: 1XXX"

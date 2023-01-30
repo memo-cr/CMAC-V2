@@ -5,10 +5,10 @@ import UserCard from "./UserCard";
 function UserItem(props) {
   return (
     <ul className="d-flex flex-wrap align-items-center">
-      {console.log(props.items)}
       {props.items.map((item) => (
         <UserCard
           key={item.id}
+          del={item._id}
           name={item.name}
           surname={item.surname}
           email={item.email}

@@ -17,7 +17,6 @@ function Login() {
         return response.json();
       })
       .then(function (data) {
-        console.log(data.access_token);
         if (data.access_token != null) {
           localStorage.setItem(
             "token",

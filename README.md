@@ -4,9 +4,9 @@ CMAC in React.js
 
 ## TODOS:
 
--add edit
--add delete
--add logs
+-add edit (machine works)
+-add delete (both)
+-add logs  
 -add homepage
 -style
 -get machine names

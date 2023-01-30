@@ -8,6 +8,8 @@ import AllMachines from "./pages/machines/AllMachines";
 import AddMachine from "./pages/machines/AddMachine";
 import AddUser from "./pages/users/AddUser";
 import AllUsers from "./pages/users/AllUsers";
+import EditMachine from "./pages/machines/EditMachine";
+import Logs from "./pages/users/Logs";
 
 function App() {
   return (
@@ -29,12 +31,17 @@ function App() {
           <Route path="/add-machine" exact>
             <AddMachine />
           </Route>
-
+          <Route path="/edit-machine/:id">
+            <EditMachine />
+          </Route>
           <Route path="/all-machines" exact>
             <AllMachines />
           </Route>
           <Route path="/login" exact>
             <Login />
+          </Route>
+          <Route path="/logs/:id" exact>
+            <Logs />
           </Route>
         </Switch>
       </Sidebar>

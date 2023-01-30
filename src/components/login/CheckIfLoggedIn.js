@@ -13,7 +13,6 @@ function CheckIfLoggedIn() {
         headers: { Authorization: localStorage.getItem("token") },
       }).then(function (response) {
         if (response.status === 401) {
-          console.log("401");
           history.push("/login");
         }
       });

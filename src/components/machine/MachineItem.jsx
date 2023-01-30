@@ -9,7 +9,7 @@ function MachineItem(props) {
         {props.items.map((item) => (
           <MachineCard
             key={item.id}
-            del={item.del}
+            del={item._id}
             name={item.name}
             idusr={item.idusr}
           />

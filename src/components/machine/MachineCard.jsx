@@ -1,16 +1,29 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import CloseButton from "react-bootstrap/CloseButton";
 import Button from "react-bootstrap/Button";
-import MachineDelete from "./MachineDelete";
+import { useHistory } from "react-router-dom";
 
 function MachineCard(props) {
+  const history = useHistory();
+
+  const MachineDelete = (id) => {
+    fetch("https://testapi.robli.at/machine/delete/" + id, {
+      method: "DELETE",
+      headers: { Authorization: localStorage.getItem("token") },
+    }).then(() => {
+      history.push("/");
+      this.forceUpdate();
+      history.replace("/all-machines");
+    });
+  };
+
   return (
     <div className="p-2 g-3">
       <li className="card shadow-border text-bg-dark border-dark">
         <div className="card-header">
           <CloseButton
             variant="white"
-            onClick={MachineDelete(props.del)}
+            onClick={() => MachineDelete(props.del)}
             style={{ float: "right" }}
           />
           <h5 className="card-title">{props.name}</h5>
@@ -21,7 +34,16 @@ function MachineCard(props) {
         </div>
 
         <div className="card-footer bg-secondary">
-          <Button variant="primary" style={{ width: "150px" }}>
+          <Button
+            variant="primary"
+            onClick={() => {
+              history.push({
+                pathname: "/edit-machine/" + props.del,
+                state: { machineName: props.name },
+              });
+            }}
+            style={{ width: "150px" }}
+          >
             Edit
           </Button>
         </div>

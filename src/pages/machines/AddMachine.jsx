@@ -11,18 +11,18 @@ function AddMachine() {
     fetch("https://testapi.robli.at/machine/add", {
       method: "POST",
       body: JSON.stringify(machine),
-      credentials: "include",
       headers: {
         "Content-Type": "application/json; charset=UTF-8",
         Authorization: localStorage.getItem("token"),
       },
     })
       .then(function (response) {
+        history.replace("/all-machines");
         return response.json();
       })
       .then(function (data) {
-        alert("added " + machine.name);
-        history.replace("/");
+        console.log(data);
+        history.replace("/all-machines");
       });
   }
 
