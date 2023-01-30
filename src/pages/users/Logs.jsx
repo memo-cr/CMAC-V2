@@ -16,8 +16,11 @@ function Logs() {
     setIsLoading(true);
     fetch("https://testapi.robli.at/log/user", {
       method: "POST",
-      headers: { Authorization: localStorage.getItem("token") },
-      body: { userID: id },
+      headers: {
+        "Content-Type": "application/json; charset=UTF-8",
+        Authorization: localStorage.getItem("token"),
+      },
+      body: JSON.stringify({ userID: id }),
     })
       .then((response) => {
         return response.json();

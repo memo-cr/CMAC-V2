@@ -40,8 +40,18 @@ function UserCard(props) {
 
         <div className="card-footer bg-secondary">
           <ButtonGroup aria-label="Basic example">
-            <Button variant="primary">Logs</Button>
-            <Button variant="info">Edit</Button>
+            <Button variant="primary">Edit</Button>
+            <Button
+              variant="info"
+              onClick={() => {
+                history.push({
+                  pathname: "/logs/" + props.del,
+                  state: { username: props.name },
+                });
+              }}
+            >
+              Logs
+            </Button>
             <Button variant="dark">
               <NavDropdown
                 id="nav-dropdown"
