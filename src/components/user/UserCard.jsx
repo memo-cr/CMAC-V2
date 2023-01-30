@@ -8,7 +8,6 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 function UserCard(props) {
   const history = useHistory();
-
   const UserDelete = (id) => {
     fetch("https://testapi.robli.at/user/delete/" + id, {
       method: "DELETE",
@@ -59,7 +58,9 @@ function UserCard(props) {
                 menuVariant="dark"
               >
                 {props.allow.map((item) => (
-                  <NavDropdown.Item>{item}</NavDropdown.Item>
+                  <NavDropdown.Item>
+                    {props.machineNames[item]}
+                  </NavDropdown.Item>
                 ))}
               </NavDropdown>
             </Button>

@@ -49,6 +49,7 @@ function EditMachineForm(props) {
             <Form.Group as={Col} controlId="formGridName">
               <Form.Label>Machine Name</Form.Label>
               <Form.Control
+                required
                 type="text"
                 ref={nameInputRef}
                 placeholder={props.machineName}

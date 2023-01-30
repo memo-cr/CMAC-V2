@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { names } from "../getMachineNames";
 
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -111,24 +112,9 @@ function NewUserForm(props) {
             <Accordion.Item eventKey="0">
               <Accordion.Header>machines</Accordion.Header>
               <Accordion.Body>
-                <Form.Check
-                  inline
-                  type="checkbox"
-                  id="custom-switch0"
-                  label="3D Drucker"
-                />
-                <Form.Check
-                  inline
-                  type="checkbox"
-                  id="custom-switch1"
-                  label="Hello"
-                />
-                <Form.Check
-                  inline
-                  type="checkbox"
-                  id="custom-switch2"
-                  label="CNC"
-                />
+                {names.map((item) => (
+                  <Form.Check inline type="checkbox" id={item} label={item} />
+                ))}
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>

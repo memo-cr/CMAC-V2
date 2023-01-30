@@ -29,7 +29,7 @@ function MachineCard(props) {
           <h5 className="card-title">{props.name}</h5>
         </div>
 
-        <div className="card-body" style={{}}>
+        <div className="card-body">
           <p className="card-text">ID: {props.idusr}</p>
         </div>
 
@@ -37,10 +37,7 @@ function MachineCard(props) {
           <Button
             variant="primary"
             onClick={() => {
-              history.push({
-                pathname: "/edit-machine/" + props.del,
-                state: { machineName: props.name },
-              });
+              history.push("/edit-machine/" + props.del);
             }}
             style={{ width: "150px" }}
           >

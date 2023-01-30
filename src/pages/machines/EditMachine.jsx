@@ -5,10 +5,7 @@ import EditMachineForm from "../../components/add/EditMachineForm";
 
 function EditMachine(props) {
   CheckIfLoggedIn();
-  const { machineName } = (props.location && props.location.state) || {};
-  console.log(machineName);
   let { id } = useParams();
-
   const history = useHistory();
 
   function editMachineHandler(machine) {
@@ -34,7 +31,7 @@ function EditMachine(props) {
     <section>
       <EditMachineForm
         onEditMachine={editMachineHandler}
-        machineName={machineName}
+        machineName={props.machineName}
       />
     </section>
   );
