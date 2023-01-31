@@ -8,7 +8,7 @@ function machineNames() {
     })
     .then((data) => {
       for (const key in data) {
-        machinenames.push(data[key].name);
+        machinenames.push([data[key].name, data[key]._id]);
       }
     });
   return machinenames;

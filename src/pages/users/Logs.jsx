@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 
-import LogForm from "../../components/logs/LogForm";
+import LogForm from "../../components/forms/LogForm";
 import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
 import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";

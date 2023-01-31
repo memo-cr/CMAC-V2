@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { useHistory } from "react-router-dom";
-import LogItem from "./LogItem";
+import LogItem from "../items/LogItem";
 
 function UserItem(props) {
   const history = useHistory();

@@ -1,10 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import UserCard from "./UserCard";
+import UserCard from "../cards/UserCard";
 
 import { names } from "../getMachineNames.js";
 
 function UserItem(props) {
+  const name = names;
   return (
     <ul className="d-flex flex-wrap align-items-center">
       {props.items.map((item) => (
@@ -15,7 +16,7 @@ function UserItem(props) {
           surname={item.surname}
           email={item.email}
           allow={item.allow}
-          machineNames={names}
+          machineNames={name}
         />
       ))}
     </ul>

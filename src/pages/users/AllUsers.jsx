@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Spinner from "react-bootstrap/Spinner";
 
 import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
-import UserItem from "../../components/user/UserItem";
+import UserItem from "../../components/items/UserItem";
 
 function AllUsers() {
   CheckIfLoggedIn();

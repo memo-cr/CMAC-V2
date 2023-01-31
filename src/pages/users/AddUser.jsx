@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 
 import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
-import NewUserForm from "../../components/add/NewUserForm";
+import NewUserForm from "../../components/forms/NewUserForm";
 
 function AddUser() {
   CheckIfLoggedIn();

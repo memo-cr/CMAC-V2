@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
 import Spinner from "react-bootstrap/Spinner";
-import MachineItem from "../../components/machine/MachineItem";
+import MachineItem from "../../components/items/MachineItem";
 
 function AllMachines() {
   CheckIfLoggedIn();

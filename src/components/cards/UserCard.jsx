@@ -59,7 +59,7 @@ function UserCard(props) {
               >
                 {props.allow.map((item) => (
                   <NavDropdown.Item>
-                    {props.machineNames[item]}
+                    {props.machineNames[item][0]}
                   </NavDropdown.Item>
                 ))}
               </NavDropdown>

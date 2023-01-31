@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import MachineCard from "./MachineCard";
+import MachineCard from "../cards/MachineCard";
 
 function MachineItem(props) {
   return (

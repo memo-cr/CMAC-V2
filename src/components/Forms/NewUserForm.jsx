@@ -9,6 +9,8 @@ import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 
 function NewUserForm(props) {
+  const name = names;
+
   const nameInputRef = useRef();
   const surnameInputRef = useRef();
   const mailInputRef = useRef();
@@ -112,8 +114,13 @@ function NewUserForm(props) {
             <Accordion.Item eventKey="0">
               <Accordion.Header>machines</Accordion.Header>
               <Accordion.Body>
-                {names.map((item) => (
-                  <Form.Check inline type="checkbox" id={item} label={item} />
+                {name.map((item) => (
+                  <Form.Check
+                    inline
+                    type="checkbox"
+                    id={item[0]}
+                    label={item[0]}
+                  />
                 ))}
               </Accordion.Body>
             </Accordion.Item>
