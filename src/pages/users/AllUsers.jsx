@@ -12,6 +12,7 @@ function AllUsers() {
 
   useEffect(() => {
     setIsLoading(true);
+
     fetch("https://testapi.robli.at/user/all", {
       headers: { Authorization: localStorage.getItem("token") },
     })

@@ -37,7 +37,10 @@ function MachineCard(props) {
           <Button
             variant="primary"
             onClick={() => {
-              history.push("/edit-machine/" + props.del);
+              history.push({
+                pathname: "/edit-machine/" + props.del,
+                state: { username: props.name },
+              });
             }}
             style={{ width: "150px" }}
           >

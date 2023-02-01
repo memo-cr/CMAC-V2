@@ -1,6 +1,6 @@
-export async function machineNames() {
+export function machineNames() {
   const machinenames = [];
-  await fetch("https://testapi.robli.at/machine/all", {
+  fetch("https://testapi.robli.at/machine/all", {
     headers: { Authorization: localStorage.getItem("token") },
   })
     .then((response) => {
@@ -13,3 +13,5 @@ export async function machineNames() {
     });
   return machinenames;
 }
+
+export let names = machineNames();

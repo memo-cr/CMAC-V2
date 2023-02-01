@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 
 import LogForm from "../../components/forms/LogForm";
 import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";

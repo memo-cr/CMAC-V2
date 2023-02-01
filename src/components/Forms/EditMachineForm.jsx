@@ -1,6 +1,5 @@
 import { useRef } from "react";
-import { useParams } from "react-router-dom";
-import { machineNames } from "../getMachineNames";
+import { useLocation } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -9,17 +8,7 @@ import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 
 function EditMachineForm(props) {
-  let { id } = useParams();
-  let machname = machineNames();
-  let machnamenew = " ";
-  for (const item in machname) {
-    console.log(machname[item][0], id);
-    if (machname[item][1] === id) {
-      console.log(machnamenew);
-      machnamenew = machname[item][0];
-      break;
-    }
-  }
+  const location = useLocation();
   const nameInputRef = useRef();
 
   function editHandler(event) {
@@ -51,7 +40,7 @@ function EditMachineForm(props) {
                 marginRight: "10px",
               }}
             >
-              Edit "{machname}"
+              Edit "{location.state.username}"
             </h2>
           </Row>
           <Row
@@ -64,7 +53,7 @@ function EditMachineForm(props) {
                 required
                 type="text"
                 ref={nameInputRef}
-                placeholder={machnamenew}
+                placeholder={location.state.username}
               />
             </Form.Group>
           </Row>

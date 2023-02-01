@@ -1,11 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useHistory } from "react-router";
+import { names } from "../getMachineNames";
+import { useLocation } from "react-router-dom";
 
 import CloseButton from "react-bootstrap/CloseButton";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { propTypes } from "react-bootstrap/esm/Image";
 
 function UserCard(props) {
   const history = useHistory();
@@ -47,7 +48,7 @@ function UserCard(props) {
               onClick={() => {
                 history.push({
                   pathname: "/logs/" + props.del,
-                  state: { username: props.name },
+                  state: { username: props.name + " " + props.surname },
                 });
               }}
             >
@@ -60,9 +61,7 @@ function UserCard(props) {
                 menuVariant="dark"
               >
                 {props.allow.map((item) => (
-                  <NavDropdown.Item>
-                    {console.log(props.machineName[0][0])}
-                  </NavDropdown.Item>
+                  <NavDropdown.Item>{names[item][0]}</NavDropdown.Item>
                 ))}
               </NavDropdown>
             </Button>
