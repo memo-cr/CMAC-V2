@@ -1,7 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useHistory } from "react-router";
 import { names } from "../getMachineNames";
-import { useLocation } from "react-router-dom";
 
 import CloseButton from "react-bootstrap/CloseButton";
 import Button from "react-bootstrap/Button";
