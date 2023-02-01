@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { names } from "../getMachineNames";
+import { machineNames } from "../getMachineNames";
 
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -9,7 +9,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 
 function NewUserForm(props) {
-  const name = names;
+  const name = machineNames();
 
   const nameInputRef = useRef();
   const surnameInputRef = useRef();

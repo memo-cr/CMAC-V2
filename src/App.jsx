@@ -12,11 +12,12 @@ import EditMachine from "./pages/machines/EditMachine";
 import Logs from "./pages/users/Logs";
 
 function App() {
+  CheckIfLoggedIn();
   return (
     <div>
       <Sidebar>
         <Switch>
-          <Route path="/" exact render={CheckIfLoggedIn()}>
+          <Route path="/" exact>
             <Home />
           </Route>
 

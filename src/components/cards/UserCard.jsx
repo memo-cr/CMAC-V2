@@ -5,9 +5,11 @@ import CloseButton from "react-bootstrap/CloseButton";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { propTypes } from "react-bootstrap/esm/Image";
 
 function UserCard(props) {
   const history = useHistory();
+
   const UserDelete = (id) => {
     fetch("https://testapi.robli.at/user/delete/" + id, {
       method: "DELETE",
@@ -59,7 +61,7 @@ function UserCard(props) {
               >
                 {props.allow.map((item) => (
                   <NavDropdown.Item>
-                    {props.machineNames[item][0]}
+                    {console.log(props.machineName[0][0])}
                   </NavDropdown.Item>
                 ))}
               </NavDropdown>

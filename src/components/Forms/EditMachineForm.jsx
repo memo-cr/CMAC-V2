@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useParams } from "react-router-dom";
-import { names } from "../getMachineNames";
+import { machineNames } from "../getMachineNames";
 
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -10,11 +10,14 @@ import Card from "react-bootstrap/Card";
 
 function EditMachineForm(props) {
   let { id } = useParams();
-  let machname = names;
-  for (const item in names) {
-    console.log(names[item][0], id);
-    if (names[item][1] == id) {
-      machname = names[item][0];
+  let machname = machineNames();
+  let machnamenew = " ";
+  for (const item in machname) {
+    console.log(machname[item][0], id);
+    if (machname[item][1] === id) {
+      console.log(machnamenew);
+      machnamenew = machname[item][0];
+      break;
     }
   }
   const nameInputRef = useRef();
@@ -61,7 +64,7 @@ function EditMachineForm(props) {
                 required
                 type="text"
                 ref={nameInputRef}
-                placeholder={machname}
+                placeholder={machnamenew}
               />
             </Form.Group>
           </Row>
