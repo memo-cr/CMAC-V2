@@ -7,6 +7,7 @@ import CheckIfLoggedIn from "./components/login/CheckIfLoggedIn";
 import AllMachines from "./pages/machines/AllMachines";
 import AddMachine from "./pages/machines/AddMachine";
 import AddUser from "./pages/users/AddUser";
+import EditUser from "./pages/users/EditUser";
 import AllUsers from "./pages/users/AllUsers";
 import EditMachine from "./pages/machines/EditMachine";
 import Logs from "./pages/users/Logs";
@@ -43,6 +44,9 @@ function App() {
           </Route>
           <Route path="/logs/:id" exact>
             <Logs />
+          </Route>
+          <Route path="/edit-user/:id">
+            <EditUser />
           </Route>
         </Switch>
       </Sidebar>

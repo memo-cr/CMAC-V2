@@ -41,7 +41,22 @@ function UserCard(props) {
 
         <div className="card-footer bg-secondary">
           <ButtonGroup aria-label="Basic example">
-            <Button variant="primary">Edit</Button>
+            <Button
+              variant="primary"
+              onClick={() => {
+                history.push({
+                  pathname: "/edit-user/" + props.del,
+                  state: {
+                    name: props.name,
+                    surname: props.surname,
+                    allow: props.allow,
+                    email: props.email,
+                  },
+                });
+              }}
+            >
+              Edit
+            </Button>
             <Button
               variant="info"
               onClick={() => {

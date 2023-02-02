@@ -64,6 +64,7 @@ function NewUserForm(props) {
                 required
                 type="text"
                 ref={nameInputRef}
+                value={props.name}
                 placeholder="Max"
               />
             </Form.Group>
@@ -74,6 +75,7 @@ function NewUserForm(props) {
                 required
                 type="text"
                 ref={surnameInputRef}
+                value={props.surname}
                 placeholder="Mustermann"
               />
             </Form.Group>
@@ -89,6 +91,7 @@ function NewUserForm(props) {
               required
               type="email"
               ref={mailInputRef}
+              value={props.email}
               placeholder="z.B.: m.m@temp.at"
             />
           </Form.Group>
