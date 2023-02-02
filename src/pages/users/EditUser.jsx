@@ -1,14 +1,15 @@
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams, useLocation } from "react-router-dom";
 
 import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
 import NewUserForm from "../../components/forms/NewUserForm";
 
 function EditUser() {
   CheckIfLoggedIn();
+  const location = useLocation();
   const history = useHistory();
   const { id } = useParams();
   function addUserHandler(user) {
-    fetch("https://testapi.robli.at/update/" + id, {
+    fetch("https://testapi.robli.at/user/update/" + id, {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
@@ -28,7 +29,13 @@ function EditUser() {
 
   return (
     <section>
-      <NewUserForm onAddUser={addUserHandler} />
+      <NewUserForm
+        onAddUser={addUserHandler}
+        name={location.state.name}
+        surname={location.state.surname}
+        email={location.state.email}
+        allow={location.state.allow}
+      />
     </section>
   );
 }
