@@ -9,6 +9,7 @@ function AllUsers() {
   CheckIfLoggedIn();
   const [isLoading, setIsLoading] = useState(true);
   const [loadedUsers, setLoadedUsers] = useState([]);
+  const [loadedMachineNames, setLoadedMachineNames] = useState([]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -29,8 +30,26 @@ function AllUsers() {
 
           users.push(user);
         }
-        setIsLoading(false);
-        setLoadedUsers(users);
+        const machinenames = [];
+        fetch("https://testapi.robli.at/machine/all", {
+          headers: { Authorization: localStorage.getItem("token") },
+        })
+          .then((response) => {
+            return response.json();
+          })
+          .then((data1) => {
+            for (const key in data1) {
+              machinenames.push([
+                data1[key].name,
+                data1[key]._id,
+                data1[key].idusr,
+              ]);
+            }
+
+            setIsLoading(false);
+            setLoadedMachineNames(machinenames);
+            setLoadedUsers(users);
+          });
       });
   }, []);
 
@@ -50,7 +69,7 @@ function AllUsers() {
   }
   return (
     <section style={{ paddingLeft: "20vw" }}>
-      <UserItem items={loadedUsers} />
+      <UserItem items={loadedUsers} machines={loadedMachineNames} />
     </section>
   );
 }

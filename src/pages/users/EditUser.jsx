@@ -1,19 +1,20 @@
 import { useHistory, useParams, useLocation } from "react-router-dom";
 
 import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
-import NewUserForm from "../../components/forms/NewUserForm";
+import EditUserForm from "../../components/forms/EditUserForm";
 
 function EditUser() {
   CheckIfLoggedIn();
   const location = useLocation();
   const history = useHistory();
   const { id } = useParams();
+  console.log(location.state.allow);
   function addUserHandler(user) {
     fetch("https://testapi.robli.at/user/update/" + id, {
-      method: "POST",
+      method: "PUT",
       body: JSON.stringify(user),
       headers: {
-        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Type": "application/json",
         Authorization: localStorage.getItem("token"),
       },
     })
@@ -29,12 +30,13 @@ function EditUser() {
 
   return (
     <section>
-      <NewUserForm
+      <EditUserForm
         onAddUser={addUserHandler}
         name={location.state.name}
         surname={location.state.surname}
         email={location.state.email}
         allow={location.state.allow}
+        machines={location.state.machines}
       />
     </section>
   );

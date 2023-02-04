@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useHistory } from "react-router";
-import { names } from "../getMachineNames";
 
 import CloseButton from "react-bootstrap/CloseButton";
 import Button from "react-bootstrap/Button";
@@ -51,6 +50,7 @@ function UserCard(props) {
                     surname: props.surname,
                     allow: props.allow,
                     email: props.email,
+                    machines: props.machines,
                   },
                 });
               }}
@@ -75,7 +75,7 @@ function UserCard(props) {
                 menuVariant="dark"
               >
                 {props.allow.map((item) => (
-                  <NavDropdown.Item>{names[item][0]}</NavDropdown.Item>
+                  <NavDropdown.Item>{props.machines[item][0]}</NavDropdown.Item>
                 ))}
               </NavDropdown>
             </Button>

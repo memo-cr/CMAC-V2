@@ -35,6 +35,7 @@ function UserItem(props) {
             surname={item.surname}
             email={item.email}
             allow={item.allow}
+            machines={props.machines}
           />
         ))}
       </ul>

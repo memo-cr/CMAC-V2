@@ -12,8 +12,7 @@ function NewUserForm(props) {
   const surnameInputRef = useRef();
   const mailInputRef = useRef();
   const nfcInputRef = useRef();
-  const allow = useRef([]);
-  // const allowInputRef= useRef();
+  const allow = useRef(props.allow);
 
   function submitHandler(event) {
     event.preventDefault();
@@ -22,6 +21,7 @@ function NewUserForm(props) {
     const enteredSurname = surnameInputRef.current.value;
     const enteredMail = mailInputRef.current.value;
     const enteredNFC = nfcInputRef.current.value;
+
     const checkedMachines = [];
     for (let i in allow.current) {
       if (allow.current[i].checked) {
@@ -29,12 +29,14 @@ function NewUserForm(props) {
       }
     }
     const userData = {
-      name: enteredName,
-      surname: enteredSurname,
-      email: enteredMail,
-      nfcid: enteredNFC,
+      name: enteredName != "" ? enteredName : props.name,
+      surname: enteredSurname != "" ? enteredSurname : props.surname,
+      email: enteredMail != "" ? enteredMail : props.email,
       allow: checkedMachines,
     };
+    if (enteredNFC != "") {
+      userData.nfcid = enteredNFC;
+    }
     props.onAddUser(userData);
   }
 
@@ -53,7 +55,7 @@ function NewUserForm(props) {
                 marginRight: "10px",
               }}
             >
-              Add user
+              Edit "{props.name + " " + props.surname}"
             </h2>
           </Row>
           <Row
@@ -63,7 +65,6 @@ function NewUserForm(props) {
             <Form.Group as={Col} controlId="formGridName">
               <Form.Label>Name</Form.Label>
               <Form.Control
-                required
                 type="text"
                 ref={nameInputRef}
                 placeholder={props.name}
@@ -73,7 +74,6 @@ function NewUserForm(props) {
             <Form.Group as={Col} controlId="formGridSurname">
               <Form.Label>Surname</Form.Label>
               <Form.Control
-                required
                 type="text"
                 ref={surnameInputRef}
                 placeholder={props.surname}
@@ -88,7 +88,6 @@ function NewUserForm(props) {
           >
             <Form.Label>Email</Form.Label>
             <Form.Control
-              required
               type="email"
               ref={mailInputRef}
               placeholder={props.email}
@@ -102,7 +101,6 @@ function NewUserForm(props) {
           >
             <Form.Label>NFC ID</Form.Label>
             <Form.Control
-              required
               type="text"
               ref={nfcInputRef}
               placeholder="z.B.: 1XXX"

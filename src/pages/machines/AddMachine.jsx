@@ -21,7 +21,6 @@ function AddMachine() {
         return response.json();
       })
       .then(function (data) {
-        console.log(data);
         history.replace("/all-machines");
       });
   }

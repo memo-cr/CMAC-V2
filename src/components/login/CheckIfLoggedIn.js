@@ -6,7 +6,6 @@ function CheckIfLoggedIn() {
 
   useEffect(() => {
     if (localStorage.getItem("token") == null) {
-      console.log("empty");
       history.push("/login");
     } else {
       fetch("https://testapi.robli.at/user/admin/me", {
