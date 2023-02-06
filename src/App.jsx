@@ -18,34 +18,34 @@ function App() {
     <div>
       <Sidebar>
         <Switch>
-          <Route path="/CMAC-V2" exact>
+          <Route path={`${process.env.PUBLIC_URL}/`} exact>
             <Home />
           </Route>
 
-          <Route path="/add-user" exact>
+          <Route path={`${process.env.PUBLIC_URL}/add-user`} exact>
             <AddUser />
           </Route>
 
-          <Route path="/all-user" exact>
+          <Route path={`${process.env.PUBLIC_URL}/all-user`} exact>
             <AllUsers />
           </Route>
 
-          <Route path="/add-machine" exact>
+          <Route path={`${process.env.PUBLIC_URL}/add-machine`} exact>
             <AddMachine />
           </Route>
-          <Route path="/edit-machine/:id">
+          <Route path={`${process.env.PUBLIC_URL}/edit-machine/:id`}>
             <EditMachine />
           </Route>
-          <Route path="/all-machines" exact>
+          <Route path={`${process.env.PUBLIC_URL}/all-machines`} exact>
             <AllMachines />
           </Route>
-          <Route path="/login" exact>
+          <Route path={`${process.env.PUBLIC_URL}/login`} exact>
             <Login />
           </Route>
-          <Route path="/logs/:id" exact>
+          <Route path={`${process.env.PUBLIC_URL}/logs/:id`} exact>
             <Logs />
           </Route>
-          <Route path="/edit-user/:id">
+          <Route path={`${process.env.PUBLIC_URL}/edit-user/:id`}>
             <EditUser />
           </Route>
         </Switch>
