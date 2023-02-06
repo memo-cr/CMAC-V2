@@ -18,7 +18,7 @@ function App() {
     <div>
       <Sidebar>
         <Switch>
-          <Route path="/" exact>
+          <Route path="/CMAC-V2" exact>
             <Home />
           </Route>
 

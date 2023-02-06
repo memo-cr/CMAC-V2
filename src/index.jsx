@@ -7,7 +7,7 @@ import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename={"/CMAC-V2"}>
     <ThemeContextWrapper>
       <App />
     </ThemeContextWrapper>
