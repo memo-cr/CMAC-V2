@@ -9,6 +9,15 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 function UserCard(props) {
   const history = useHistory();
 
+  function getName(item) {
+    for (const key in props.machines) {
+      if (props.machines[key][2] == item) {
+        return props.machines[key][0];
+      }
+    }
+    return "not found";
+  }
+
   const UserDelete = (id) => {
     fetch("https://testapi.robli.at/user/delete/" + id, {
       method: "DELETE",
@@ -62,7 +71,10 @@ function UserCard(props) {
               onClick={() => {
                 history.push({
                   pathname: "/logs/" + props.del,
-                  state: { username: props.name + " " + props.surname },
+                  state: {
+                    username: props.name + " " + props.surname,
+                    machines: props.machines,
+                  },
                 });
               }}
             >
@@ -75,7 +87,7 @@ function UserCard(props) {
                 menuVariant="dark"
               >
                 {props.allow.map((item) => (
-                  <NavDropdown.Item>{props.machines[item][0]}</NavDropdown.Item>
+                  <NavDropdown.Item>{getName(item)}</NavDropdown.Item>
                 ))}
               </NavDropdown>
             </Button>
