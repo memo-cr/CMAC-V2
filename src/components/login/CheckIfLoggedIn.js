@@ -8,7 +8,7 @@ function CheckIfLoggedIn() {
     if (localStorage.getItem("token") == null) {
       history.push("/login");
     } else {
-      fetch("https://testapi.robli.at/user/admin/me", {
+      fetch("url", {
         headers: { Authorization: localStorage.getItem("token") },
       }).then(function (response) {
         if (response.status === 401) {

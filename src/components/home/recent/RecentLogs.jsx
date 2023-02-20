@@ -4,7 +4,50 @@ import RecentItem from "./RecentItem";
 function RecentLogs() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedLogs, setLoadedLogs] = useState([]);
+  const [loadedUsers, setLoadedUsers] = useState([]);
+  const [loadedMachineNames, setLoadedMachineNames] = useState([]);
 
+  useEffect(() => {
+    setIsLoading(true);
+
+    fetch("https://testapi.robli.at/user/all", {
+      headers: { Authorization: localStorage.getItem("token") },
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        const users = [];
+        for (const key in data) {
+          const user = {
+            id: key,
+            ...data[key],
+          };
+
+          users.push(user);
+        }
+        const machinenames = [];
+        fetch("https://testapi.robli.at/machine/all", {
+          headers: { Authorization: localStorage.getItem("token") },
+        })
+          .then((response) => {
+            return response.json();
+          })
+          .then((data1) => {
+            for (const key in data1) {
+              machinenames.push([
+                data1[key].name,
+                data1[key]._id,
+                data1[key].idusr,
+              ]);
+            }
+
+            setIsLoading(false);
+            setLoadedMachineNames(machinenames);
+            setLoadedUsers(users);
+          });
+      });
+  }, []);
   useEffect(() => {
     setIsLoading(true);
     fetch("https://testapi.robli.at/log/all", {
@@ -60,6 +103,8 @@ function RecentLogs() {
                         deltaH={item.deltaH}
                         deltaM={item.deltaM}
                         machineID={item.machineID}
+                        allnames={loadedUsers}
+                        allmachines={loadedMachineNames}
                       />
                     ))}
                   </tbody>
