@@ -7,7 +7,7 @@ function RecentLogs() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://testapi.robli.at/machine/all", {
+    fetch("https://testapi.robli.at/log/all", {
       headers: { Authorization: localStorage.getItem("token") },
     })
       .then((response) => {
@@ -17,14 +17,15 @@ function RecentLogs() {
         const users = [];
         for (const key in data) {
           const user = {
-            id: key,
             ...data[key],
           };
 
           users.push(user);
         }
+        let logs = users.reverse();
+        logs = logs.slice(0, 10);
         setIsLoading(false);
-        setLoadedLogs(users);
+        setLoadedLogs(logs);
       });
   }, []);
 
@@ -33,7 +34,7 @@ function RecentLogs() {
   }
 
   return (
-    <div className="p-2 g-3">
+    <div className="p-2 g-3" style={{ marginLeft: "-20vw" }}>
       <div className="container">
         <div className="row align-items-center vh-100">
           <div className="col-7 mx-auto">
@@ -50,16 +51,17 @@ function RecentLogs() {
                     </tr>
                   </thead>
                   <tbody>
-                    {/* {loadedLogs.map((item) => (
+                    {loadedLogs.map((item) => (
                       <RecentItem
                         key={item.id}
+                        usrID={item.usrID}
                         startT={item.startT}
                         endT={item.endT}
                         deltaH={item.deltaH}
                         deltaM={item.deltaM}
                         machineID={item.machineID}
                       />
-                    ))} */}
+                    ))}
                   </tbody>
                 </table>
               </div>

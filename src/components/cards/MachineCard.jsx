@@ -12,8 +12,6 @@ function MachineCard(props) {
       headers: { Authorization: localStorage.getItem("token") },
     }).then(() => {
       history.push("/");
-      this.forceUpdate();
-      history.replace("/all-machines");
     });
   };
 
