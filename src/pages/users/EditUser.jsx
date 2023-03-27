@@ -1,7 +1,7 @@
 import { useHistory, useParams, useLocation } from "react-router-dom";
 
 import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
-import EditUserForm from "../../components/forms/EditUserForm";
+import EditUserForm from "../../components/Forms/EditUserForm";
 
 function EditUser() {
   CheckIfLoggedIn();

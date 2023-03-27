@@ -1,4 +1,3 @@
-import Textwriter from "../components/home/textwriter/Textwriter";
 import RecentLogs from "../components/home/recent/RecentLogs";
 import CheckIfLoggedIn from "../components/login/CheckIfLoggedIn";
 import Container from "react-bootstrap/Container";
@@ -14,7 +13,6 @@ function Home() {
         position: "fixed",
       }}
     >
-      <Textwriter></Textwriter>
       <RecentLogs></RecentLogs>
     </Container>
   );

@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 
 import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
-import NewMachineForm from "../../components/forms/NewMachineForm";
+import NewMachineForm from "../../components/Forms/NewMachineForm";
 
 function AddMachine() {
   CheckIfLoggedIn();

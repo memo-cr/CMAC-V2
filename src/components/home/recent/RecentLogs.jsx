@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Textwriter from "../textwriter/Textwriter";
 
 import RecentItem from "./RecentItem";
 function RecentLogs() {
@@ -81,6 +82,7 @@ function RecentLogs() {
       <div className="container">
         <div className="row align-items-center vh-100">
           <div className="col-7 mx-auto">
+            <Textwriter></Textwriter>
             <div className="card text-bg-dark border-dark shadow border">
               <div className="card-body d-flex flex-column align-items-center">
                 <table className="table table-dark table-striped">
