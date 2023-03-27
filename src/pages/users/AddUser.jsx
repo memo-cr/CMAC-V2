@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Spinner from "react-bootstrap/Spinner";
 
 import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
-import NewUserForm from "../../components/Forms/NewUserForm";
+import NewUserForm from "../../components/forms/NewUserForm";
 
 function AddUser() {
   CheckIfLoggedIn();
