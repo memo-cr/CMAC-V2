@@ -42,10 +42,6 @@ function Sidebar(props) {
             </Link>
           </CDBSidebarMenu>
         </CDBSidebarContent>
-
-        <CDBSidebarFooter style={{ textAlign: "center" }}>
-          <CDBSidebarMenuItem icon="moon">Switch mode</CDBSidebarMenuItem>
-        </CDBSidebarFooter>
       </CDBSidebar>
       {props.children}
     </div>

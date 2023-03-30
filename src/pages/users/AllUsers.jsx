@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Spinner from "react-bootstrap/Spinner";
 
+import Sidebar from "../../components/layout/Sidebar";
 import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
 import UserItem from "../../components/items/UserItem";
 
@@ -54,22 +55,26 @@ function AllUsers() {
 
   if (isLoading) {
     return (
-      <section>
-        <Spinner
-          animation="border"
-          style={{
-            flex: 1,
-            marginTop: "350px",
-            marginLeft: "50%",
-          }}
-        />
-      </section>
+      <Sidebar>
+        <section>
+          <Spinner
+            animation="border"
+            style={{
+              flex: 1,
+              marginTop: "350px",
+              marginLeft: "50%",
+            }}
+          />
+        </section>
+      </Sidebar>
     );
   }
   return (
-    <section style={{ paddingLeft: "20vw" }}>
-      <UserItem items={loadedUsers} machines={loadedMachineNames} />
-    </section>
+    <Sidebar>
+      <section style={{ paddingLeft: "20vw" }}>
+        <UserItem items={loadedUsers} machines={loadedMachineNames} />
+      </section>
+    </Sidebar>
   );
 }
 

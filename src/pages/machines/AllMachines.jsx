@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+import Sidebar from "../../components/layout/Sidebar";
 import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
 import Spinner from "react-bootstrap/Spinner";
 import MachineItem from "../../components/items/MachineItem";
@@ -35,22 +36,26 @@ function AllMachines() {
 
   if (isLoading) {
     return (
-      <section>
-        <Spinner
-          animation="border"
-          style={{
-            flex: 1,
-            marginTop: "350px",
-            marginLeft: "50%",
-          }}
-        />
-      </section>
+      <Sidebar>
+        <section>
+          <Spinner
+            animation="border"
+            style={{
+              flex: 1,
+              marginTop: "350px",
+              marginLeft: "50%",
+            }}
+          />
+        </section>
+      </Sidebar>
     );
   }
   return (
-    <section style={{ paddingLeft: "18vw" }}>
-      <MachineItem items={loadedMachines} />
-    </section>
+    <Sidebar>
+      <section style={{ paddingLeft: "18vw" }}>
+        <MachineItem items={loadedMachines} />
+      </section>
+    </Sidebar>
   );
 }
 

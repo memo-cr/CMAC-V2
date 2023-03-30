@@ -1,5 +1,6 @@
 import { useParams, useLocation } from "react-router-dom";
 
+import Sidebar from "../../components/layout/Sidebar";
 import LogForm from "../../components/forms/LogForm";
 import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
 import { useState, useEffect } from "react";
@@ -42,22 +43,26 @@ function Logs() {
 
   if (isLoading) {
     return (
-      <section>
-        <Spinner
-          animation="border"
-          style={{
-            flex: 1,
-            marginTop: "350px",
-            marginLeft: "50%",
-          }}
-        />
-      </section>
+      <Sidebar>
+        <section>
+          <Spinner
+            animation="border"
+            style={{
+              flex: 1,
+              marginTop: "350px",
+              marginLeft: "50%",
+            }}
+          />
+        </section>
+      </Sidebar>
     );
   }
   return (
-    <section style={{ paddingLeft: "20vw" }}>
-      <LogForm items={loadedLogs} />
-    </section>
+    <Sidebar>
+      <section style={{ paddingLeft: "20vw" }}>
+        <LogForm items={loadedLogs} />
+      </section>
+    </Sidebar>
   );
 }
 

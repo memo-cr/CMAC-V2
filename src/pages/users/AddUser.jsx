@@ -2,6 +2,7 @@ import { useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Spinner from "react-bootstrap/Spinner";
 
+import Sidebar from "../../components/layout/Sidebar";
 import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
 import NewUserForm from "../../components/forms/NewUserForm";
 
@@ -55,16 +56,18 @@ function AddUser() {
 
   if (isLoading) {
     return (
-      <section>
-        <Spinner
-          animation="border"
-          style={{
-            flex: 1,
-            marginTop: "350px",
-            marginLeft: "50%",
-          }}
-        />
-      </section>
+      <Sidebar>
+        <section>
+          <Spinner
+            animation="border"
+            style={{
+              flex: 1,
+              marginTop: "350px",
+              marginLeft: "50%",
+            }}
+          />
+        </section>
+      </Sidebar>
     );
   }
   return (

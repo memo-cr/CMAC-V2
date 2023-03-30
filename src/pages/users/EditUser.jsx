@@ -1,5 +1,6 @@
 import { useHistory, useParams, useLocation } from "react-router-dom";
 
+import Sidebar from "../../components/layout/Sidebar";
 import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
 import EditUserForm from "../../components/forms/EditUserForm";
 
@@ -29,16 +30,18 @@ function EditUser() {
   }
 
   return (
-    <section>
-      <EditUserForm
-        onAddUser={addUserHandler}
-        name={location.state.name}
-        surname={location.state.surname}
-        email={location.state.email}
-        allow={location.state.allow}
-        machines={location.state.machines}
-      />
-    </section>
+    <Sidebar>
+      <section>
+        <EditUserForm
+          onAddUser={addUserHandler}
+          name={location.state.name}
+          surname={location.state.surname}
+          email={location.state.email}
+          allow={location.state.allow}
+          machines={location.state.machines}
+        />
+      </section>
+    </Sidebar>
   );
 }
 

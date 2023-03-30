@@ -1,5 +1,6 @@
 import { useHistory } from "react-router-dom";
 
+import Sidebar from "../../components/layout/Sidebar";
 import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
 import NewMachineForm from "../../components/forms/NewMachineForm";
 
@@ -26,9 +27,11 @@ function AddMachine() {
   }
 
   return (
-    <section>
-      <NewMachineForm onAddMachine={addMachineHandler} />
-    </section>
+    <Sidebar>
+      <section>
+        <NewMachineForm onAddMachine={addMachineHandler} />
+      </section>
+    </Sidebar>
   );
 }
 

@@ -1,5 +1,6 @@
 import { useHistory, useParams } from "react-router-dom";
 
+import Sidebar from "../../components/layout/Sidebar";
 import CheckIfLoggedIn from "../../components/login/CheckIfLoggedIn";
 import EditMachineForm from "../../components/forms/EditMachineForm";
 
@@ -27,12 +28,14 @@ function EditMachine(props) {
   }
 
   return (
-    <section>
-      <EditMachineForm
-        onEditMachine={editMachineHandler}
-        machineName={props.machineName}
-      />
-    </section>
+    <Sidebar>
+      <section>
+        <EditMachineForm
+          onEditMachine={editMachineHandler}
+          machineName={props.machineName}
+        />
+      </section>
+    </Sidebar>
   );
 }
 
