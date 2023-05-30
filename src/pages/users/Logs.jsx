@@ -15,7 +15,7 @@ function Logs() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://testapi.robli.at/log/user", {
+    fetch("https://testapi.placeholder.at/log/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=UTF-8",

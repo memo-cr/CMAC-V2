@@ -11,7 +11,7 @@ function RecentLogs() {
   useEffect(() => {
     setIsLoading(true);
 
-    fetch("https://testapi.robli.at/user/all", {
+    fetch("https://testapi.placeholder.at/user/all", {
       headers: { Authorization: localStorage.getItem("token") },
     })
       .then((response) => {
@@ -28,7 +28,7 @@ function RecentLogs() {
           users.push(user);
         }
         const machinenames = [];
-        fetch("https://testapi.robli.at/machine/all", {
+        fetch("https://testapi.placeholder.at/machine/all", {
           headers: { Authorization: localStorage.getItem("token") },
         })
           .then((response) => {
@@ -51,7 +51,7 @@ function RecentLogs() {
   }, []);
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://testapi.robli.at/log/all", {
+    fetch("https://testapi.placeholder.at/log/all", {
       headers: { Authorization: localStorage.getItem("token") },
     })
       .then((response) => {

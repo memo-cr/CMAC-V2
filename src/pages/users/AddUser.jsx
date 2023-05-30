@@ -17,7 +17,7 @@ function AddUser() {
     setIsLoading(true);
 
     const machinenames = [];
-    fetch("https://testapi.robli.at/machine/all", {
+    fetch("https://testapi.placeholder.at/machine/all", {
       headers: { Authorization: localStorage.getItem("token") },
     })
       .then((response) => {
@@ -37,7 +37,7 @@ function AddUser() {
       });
   }, []);
   function addUserHandler(user) {
-    fetch("https://testapi.robli.at/user/add", {
+    fetch("https://testapi.placeholder.at/user/add", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
@@ -71,15 +71,17 @@ function AddUser() {
     );
   }
   return (
-    <section>
-      <NewUserForm
-        onAddUser={addUserHandler}
-        name="Max"
-        surname="Mustermann"
-        email="example@example.com"
-        machines={loadedMachineNames}
-      />
-    </section>
+    <Sidebar>
+      <section>
+        <NewUserForm
+          onAddUser={addUserHandler}
+          name="Max"
+          surname="Mustermann"
+          email="example@example.com"
+          machines={loadedMachineNames}
+        />
+      </section>
+    </Sidebar>
   );
 }
 

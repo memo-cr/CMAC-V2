@@ -6,7 +6,7 @@ function Login() {
   const history = useHistory();
 
   function loginHandler(logData) {
-    fetch("http://testapi.robli.at/user/admin/login", {
+    fetch("http://testapi.placeholder.at/user/admin/login", {
       method: "POST",
       headers: {
         "Content-type": "application/x-www-form-urlencoded;charset=UTF-8",

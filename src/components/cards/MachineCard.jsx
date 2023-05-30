@@ -7,7 +7,7 @@ function MachineCard(props) {
   const history = useHistory();
 
   const MachineDelete = (id) => {
-    fetch("https://testapi.robli.at/machine/delete/" + id, {
+    fetch("https://testapi.placeholder.at/machine/delete/" + id, {
       method: "DELETE",
       headers: { Authorization: localStorage.getItem("token") },
     }).then(() => {

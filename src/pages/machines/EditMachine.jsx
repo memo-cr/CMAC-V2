@@ -10,7 +10,7 @@ function EditMachine(props) {
   const history = useHistory();
 
   function editMachineHandler(machine) {
-    fetch("https://testapi.robli.at/machine/update/" + id, {
+    fetch("https://testapi.placeholder.at/machine/update/" + id, {
       method: "PUT",
       body: JSON.stringify(machine),
       headers: {

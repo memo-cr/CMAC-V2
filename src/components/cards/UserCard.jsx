@@ -19,7 +19,7 @@ function UserCard(props) {
   }
 
   const UserDelete = (id) => {
-    fetch("https://testapi.robli.at/user/delete/" + id, {
+    fetch("https://testapi.placeholder.at/user/delete/" + id, {
       method: "DELETE",
       headers: { Authorization: localStorage.getItem("token") },
     }).then(() => {

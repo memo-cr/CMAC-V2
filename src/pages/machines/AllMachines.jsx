@@ -12,7 +12,7 @@ function AllMachines() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://testapi.robli.at/machine/all", {
+    fetch("https://testapi.placeholder.at/machine/all", {
       headers: { Authorization: localStorage.getItem("token") },
     })
       .then((response) => {

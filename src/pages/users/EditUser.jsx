@@ -11,7 +11,7 @@ function EditUser() {
   const { id } = useParams();
   console.log(location.state.allow);
   function addUserHandler(user) {
-    fetch("https://testapi.robli.at/user/update/" + id, {
+    fetch("https://testapi.placeholder.at/user/update/" + id, {
       method: "PUT",
       body: JSON.stringify(user),
       headers: {

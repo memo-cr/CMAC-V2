@@ -9,7 +9,7 @@ function AddMachine() {
   const history = useHistory();
 
   function addMachineHandler(machine) {
-    fetch("https://testapi.robli.at/machine/add", {
+    fetch("https://testapi.placeholder.at/machine/add", {
       method: "POST",
       body: JSON.stringify(machine),
       headers: {
